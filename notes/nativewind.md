@@ -37,8 +37,8 @@ The NativeWind package is a utility library that brings Tailwind CSS functionali
 9. Handling Platform-Specific Styling:
 
 10. Theme Customization:
-    - Test the ability to customize the NativeWind theme by modifying the theme object provided by the package.
-    - Verify that the customized theme values are correctly applied to the utility classes and components.
+    - Prose plugin
+    - Custom variables css files
 
 11. Colors:
 
