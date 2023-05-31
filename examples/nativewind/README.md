@@ -10,8 +10,6 @@ https://github.com/PierrePetiteau/my-react-native-book/assets/104726314/7a149872
 - [Github repo](https://github.com/marklawlor/nativewind)
 - [Discussion v3 paused - project moving to expo](https://github.com/marklawlor/nativewind/issues/464)
 
-<br>
-
 ## TLDR nativewind v2 (@stable)
 
 ### v2 Advantages
@@ -30,8 +28,6 @@ https://github.com/PierrePetiteau/my-react-native-book/assets/104726314/7a149872
 - Need to duplicate all theme values for dark theme (minor)
 - Need to kill server & reset cache each time we modify `tailwind.config.js` (minor)
 - Need to replace `clsx` by custom helper when trying to compose a value instead of className (minor)
-
-<br>
 
 ## TLDR nativewind v3 (@next)
 
