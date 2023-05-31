@@ -1,10 +1,50 @@
 # Nativewind deep dive
 
-## Limitations
+## Ressources
 
-- Cannot access css variables colors
-- Need to use dark: modifier and deduplicate colors for dark theme
-- Need to use clsx to compose className
+- [Documentation v2 (stable)](https://www.nativewind.dev/)
+- [Documentation v3 (next)](https://next.nativewind.dev/)
+- [Github v3 PR](https://github.com/marklawlor/nativewind/issues/308)
+- [Github repo](https://github.com/marklawlor/nativewind)
+- [Discussion v3 paused - project moving to expo](https://github.com/marklawlor/nativewind/issues/464)
+
+<br>
+
+## TLDR nativewind v2 (@stable)
+
+### v2 Advantages
+
+- `useTailwind` hook - retrieve style value from className
+- `dark:` modifier - override style on dark scheme
+- `clsx` package - compose className for complex components with huge amount of variants
+- Possibility to add custom plugin
+- `xs:` `sm:` `md:` modifiers - breakpoint specific styling support
+- `ios:` `android:` `web:` modifiers - platform specific styling support
+- `tailwindcss` power - simplify a lot the styling logic
+
+### v2 Limitations
+
+- No way to update theme dynamically (minor)
+- Need to duplicate all theme values for dark theme (minor)
+- Need to kill server & reset cache each time we modify `tailwind.config.js` (minor)
+- Need to replace `clsx` by custom helper when trying to compose a value instead of className (minor)
+
+<br>
+
+## TLDR nativewind v3 (@next)
+
+### v3 Advantages
+
+- `styled()` method - create a component with variant props
+- `--css-variables` - updating variables make possible dynamic themes
+- No need to duplicate all alternatives theme values
+
+### v3 Limitations & blockers
+
+- Seem like there is issue with EAS (high)
+- No way to retrieve value from className (medium)
+- `dark:` modifier unavailable (medium)
+- `color/opacity` syntax broken (medium)
 
 ## Items
 
