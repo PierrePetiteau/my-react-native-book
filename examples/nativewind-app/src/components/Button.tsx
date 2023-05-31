@@ -1,8 +1,18 @@
 import clsx from "clsx";
+import { UseTailwindOptions, useTailwind } from "nativewind";
 import { FC, ReactElement, useRef } from "react";
-import { ActivityIndicator, Animated, Easing, Pressable, Text } from "react-native";
+import { ActivityIndicator, Animated, Easing, Pressable, Text, TextStyle } from "react-native";
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+
+const useCSSTextColor = (options: UseTailwindOptions<TextStyle>) => {
+  const style = useTailwind(options) as TextStyle[];
+
+  if (style && style.length) {
+    return style[style.length - 1].color;
+  }
+  return "gray";
+};
 
 export type ButtonProps = {
   onPress: () => void;
@@ -68,14 +78,7 @@ export const Button: FC<ButtonProps> = ({
     "rounded-full": shape === "circle",
   });
 
-  const textClassName = clsx({
-    "font-[raleway-bold] font-semibold": true,
-
-    uppercase: !lowercase,
-    "text-sm": size === "small",
-    "text-base": size === "medium",
-    "text-lg": size === "large",
-
+  const textColorClassName = clsx({
     "text-neutral-content dark:text-neutral-content-dark": !outline && intent === "neutral",
     "text-primary-content dark:text-primary-content-dark": !outline && intent === "primary",
     "text-secondary-content dark:text-secondary-content-dark": !outline && intent === "secondary",
@@ -98,6 +101,16 @@ export const Button: FC<ButtonProps> = ({
     "text-base-content/40 dark:text-base-content-dark/40": intent === "disabled",
   });
 
+  const textClassName = clsx({
+    "font-[raleway-bold] font-semibold": true,
+
+    uppercase: !lowercase,
+    "text-sm": size === "small",
+    "text-base": size === "medium",
+    "text-lg": size === "large",
+  });
+
+  const textColor = useCSSTextColor({ className: textColorClassName });
   const scaleValue = useRef(new Animated.Value(1)).current;
 
   const handlePressIn = () => {
@@ -131,8 +144,8 @@ export const Button: FC<ButtonProps> = ({
       onPressOut={handlePressOut}
       disabled={intent === "disabled" || loading}
     >
-      {loading ? <ActivityIndicator size="small" color="gray" className="pr-2" /> : leftElement}
-      <Text className={textClassName}>{text}</Text>
+      {loading ? <ActivityIndicator size="small" color={textColor} className="pr-2" /> : leftElement}
+      <Text className={textClassName + " " + textColorClassName}>{text}</Text>
       {rightElement}
     </AnimatedPressable>
   );
