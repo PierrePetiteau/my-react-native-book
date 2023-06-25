@@ -23,6 +23,12 @@ mv App.js App.tsx
 # Create ios and android folders
 npx expo prebuild -p all
 
+# Add packages
+
+# navigation
+# npm install @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/native-stack
+
+
 # Open the project in your preferred code editor
 code .
 

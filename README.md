@@ -1,1 +1,43 @@
 # my-react-native-book
+
+## Roadmap
+
+- Styling
+  - Stylesheet API
+  - Nativewind ✅
+- Navigation
+  - React navigation
+- State
+  - Context API
+  - Apollo client
+  - Legend state
+  - Redux
+  - MobX
+  - Recoil
+- Network
+  - react-query
+  - apollo graphql
+- Realtime events
+- Push notifications
+- Animations
+  - React animated
+  - Reanimated
+  - Motion
+- Async-storage
+- Testing
+  - Unit tests
+  - Integration tests
+  - End to end tests
+  - Snapshots tests
+- Performances & profiling
+- Permissions and Device APIs
+- App lifecycle
+  - Splashscreen
+- Internationalization
+- Background tasks
+- Logs, Analytics & Error handling
+- Security
+- Build & deployment
+- Developper experience & tools
+  - Typescript
+  - Eslint
